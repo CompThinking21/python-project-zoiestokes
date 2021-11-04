@@ -1,6 +1,6 @@
 signs = input("Enter your sign: ")
 #input allows for the user to enter their sign. I will create a statment that raises an error if the user imputs something other then a sign
-def horo():    
+def horo():      
 #created a function that stores all of the horoscopes
     if signs == 'capricorn':
         print('Capricorns are the ultimate worker bees; they are ambitious, organized, practical, goal-oriented, and they do not mind the hustle. They are ready to give up a lot in order to achieve that goal, Verk says. They also love making their own rules, which means they strive to reach high career positions.')
