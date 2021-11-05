@@ -1,6 +1,39 @@
+import requests
+sign_list = ["capricorn", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "aries", "aquarius"]
+#create list that stores all horoscope signs
+def getsign():
+    get_sign = str(input("please enter your sign: ")).lower()
+    if get_sign in sign_list:
+        return get_sign
+    else:
+        print("imput not applicable please try again")
+        getsign()
+    user_sign = getsign()
+def mainmenu():
+    menu['1']="find horoscope"
+    menu['2']="find compatibility"
+    menu['3']="Exit"
+    while True:
+      options=menu.keys()
+      options.sort()
+        for entry in options:
+          print entry, menu[entry]
+          selection=raw_input("Please Select:")
+        if selection =='1':
+          print "add"
+        elif selection == '2':
+          print "delete"
+        elif selection == '3':
+          break
+        else:
+          print "Unknown Option Selected!"
+
 signs = input("Enter your sign: ")
+params = ('signs', 'day', 'today')
+aztrodata = requests.post('https://aztro.sameerkumar.website/', params=params)
+
 #input allows for the user to enter their sign. I will create a statment that raises an error if the user imputs something other then a sign
-def horo():      
+def horo():
 #created a function that stores all of the horoscopes
     if signs == 'capricorn':
         print('Capricorns are the ultimate worker bees; they are ambitious, organized, practical, goal-oriented, and they do not mind the hustle. They are ready to give up a lot in order to achieve that goal, Verk says. They also love making their own rules, which means they strive to reach high career positions.')
