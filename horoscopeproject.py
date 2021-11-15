@@ -1,4 +1,5 @@
 import requests
+import json
 sign_list = ["capricorn", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "aries", "aquarius"]
 #create list that stores all horoscope signs
 def getsign():
@@ -8,29 +9,41 @@ def getsign():
     else:
         print("imput not applicable please try again")
         getsign()
-    user_sign = getsign()
-def mainmenu():
-    menu['1']="find horoscope"
-    menu['2']="find compatibility"
-    menu['3']="Exit"
-    while True:
-      options=menu.keys()
-      options.sort()
-        for entry in options:
-          print entry, menu[entry]
-          selection=raw_input("Please Select:")
-        if selection =='1':
-          print "add"
-        elif selection == '2':
-          print "delete"
-        elif selection == '3':
-          break
-        else:
-          print "Unknown Option Selected!"
-
-signs = input("Enter your sign: ")
-params = ('signs', 'day', 'today')
+user_sign = getsign()
+params = (
+('sign', user_sign),
+ ('day', 'today'))
 aztrodata = requests.post('https://aztro.sameerkumar.website/', params=params)
+# def findhoroscope():
+aztrodictionary = aztrodata.json()
+print(aztrodictionary)
+print(type(aztrodictionary))
+print(aztrodictionary['description'])
+def description():
+    print(aztrodictionary['description'])
+#call back to main menu and edit the main menu when you come back to the code(personal note)
+
+
+
+
+# def mainmenu():
+#     menu['1']="find horoscope"
+#     menu['2']="find compatibility"
+#     menu['3']="Exit"
+#     while True:
+#       options=menu.keys()
+#       options.sort()
+#         for entry in options:
+#           print entry, menu[entry]
+#           selection=raw_input("Please Select:")
+#         if selection =='1':
+#           print "add"
+#         elif selection == '2':
+#           print "delete"
+#         elif selection == '3':
+#           break
+#         else:
+#           print "Unknown Option Selected!"
 
 #input allows for the user to enter their sign. I will create a statment that raises an error if the user imputs something other then a sign
 def horo():
