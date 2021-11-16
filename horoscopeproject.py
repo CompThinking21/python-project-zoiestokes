@@ -35,8 +35,7 @@ def mainmenu():
           print entry, menu[entry]
           selection=raw_input("Please Select:")
         if selection =='find horoscope':
-          def description()
-            print("find horoscope")
+          description()
           #call description function instead 0f print add
       elif selection == 'find compatibility':
           print "delete"
