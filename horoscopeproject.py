@@ -6,9 +6,11 @@ def getsign():
     get_sign = str(input("please enter your sign: ")).lower()
     if get_sign in sign_list:
         return get_sign
+#create a function that contains a varible that allows the user to imput their sign, the if statement allows for the program to get the sign in the list
     else:
         print("imput not applicable please try again")
         getsign()
+#the else statment accounts for if the user imputs anything other then a sign from the list
 user_sign = getsign()
 params = (
 ('sign', user_sign),
