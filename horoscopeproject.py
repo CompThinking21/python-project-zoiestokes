@@ -27,21 +27,23 @@ def description():
 def mainmenu():
     menu['1']="find horoscope"
     menu['2']="find compatibility"
-    menu['3']="Exit"
+    menu['3']="change sign"
+    menu['4']="exit"
     while True:
       options=menu.keys()
       options.sort()
-        for entry in options:
-          print entry, menu[entry]
+    for entry in options:
+         print entry, menu[entry]
           selection=raw_input("Please Select:")
-        if selection =='find horoscope':
+    if selection =='find horoscope':
           description()
           #call description function instead 0f print add
-      elif selection == 'find compatibility':
+    elif selection == 'find compatibility':
           print "delete"
-      elif selection == 'Exit':
-          break
-        else:
+          # call function for finding compatibility not yet made
+    elif selection == 'change sign':
+        str(input("please enter your sign: ")).lower()
+    else:
           print "Unknown Option Selected!"
 #
 # #input allows for the user to enter their sign. I will create a statment that raises an error if the user imputs something other then a sign
