@@ -30,11 +30,11 @@ def mainmenu():
     menu['3']="change sign"
     menu['4']="exit"
     while True:
-      options=menu.keys()
-      options.sort()
-    for entry in options:
-         print entry, menu[entry]
-          selection=raw_input("Please Select:")
+        options=menu.keys()
+        options.sort()
+        for entry in options:
+            print entry, menu[entry]
+            selection=raw_input("Please Select:")
     if selection =='find horoscope':
           description()
           #call description function instead 0f print add
