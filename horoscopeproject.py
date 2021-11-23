@@ -23,6 +23,8 @@ print(type(aztrodictionary))
 print(aztrodictionary['description'])
 def description():
     print(aztrodictionary['description'])
+def compatibility():
+    print(aztrodictionary['compatibility'])
 #call back to main menu and edit the main menu when you come back to the code(personal note)
 def mainmenu():
     menu['1']="find horoscope"
@@ -39,10 +41,12 @@ def mainmenu():
           description()
           #call description function instead 0f print add
     elif selection == 'find compatibility':
-          print "delete"
+          compatibility()
           # call function for finding compatibility not yet made
     elif selection == 'change sign':
         str(input("please enter your sign: ")).lower()
+    elif selection == 'exit':
+        break
     else:
           print "Unknown Option Selected!"
 #
