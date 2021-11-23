@@ -18,37 +18,37 @@ params = (
 aztrodata = requests.post('https://aztro.sameerkumar.website/', params=params)
 # def findhoroscope():
 aztrodictionary = aztrodata.json()
-print(aztrodictionary)
-print(type(aztrodictionary))
-print(aztrodictionary['description'])
+
 def description():
     print(aztrodictionary['description'])
 def compatibility():
     print(aztrodictionary['compatibility'])
 #call back to main menu and edit the main menu when you come back to the code(personal note)
 def mainmenu():
+    menu ={}
     menu['1']="find horoscope"
     menu['2']="find compatibility"
     menu['3']="change sign"
     menu['4']="exit"
     while True:
         options=menu.keys()
-        options.sort()
+        #options.sort()
         for entry in options:
-            print entry, menu[entry]
-            selection=raw_input("Please Select:")
-    if selection =='find horoscope':
-          description()
-          #call description function instead 0f print add
-    elif selection == 'find compatibility':
-          compatibility()
-          # call function for finding compatibility not yet made
-    elif selection == 'change sign':
-        str(input("please enter your sign: ")).lower()
-    elif selection == 'exit':
-        break
-    else:
-          print "Unknown Option Selected!"
+            print(entry, menu[entry])
+        selection=input("Please Select:")
+        if selection =='find horoscope':
+              description()
+              #call description function instead 0f print add
+        elif selection == 'find compatibility':
+              compatibility()
+              # call function for finding compatibility not yet made
+        elif selection == 'change sign':
+            getsign()
+        elif selection == 'exit':
+            break
+        else:
+              print("Unknown Option Selected!")
+mainmenu()
 #
 # #input allows for the user to enter their sign. I will create a statment that raises an error if the user imputs something other then a sign
 # def horo():
