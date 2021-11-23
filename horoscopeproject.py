@@ -1,5 +1,7 @@
 import requests
 import json
+#import request allows for the api to be implemented
+#import json allows for the aztro data to be stored in a dictionary
 sign_list = ["capricorn", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "aries", "aquarius"]
 #create list that stores all horoscope signs
 def getsign():
@@ -18,7 +20,6 @@ params = (
 aztrodata = requests.post('https://aztro.sameerkumar.website/', params=params)
 # def findhoroscope():
 aztrodictionary = aztrodata.json()
-
 def description():
     print(aztrodictionary['description'])
 def compatibility():
