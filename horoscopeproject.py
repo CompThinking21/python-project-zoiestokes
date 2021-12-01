@@ -7,7 +7,7 @@ sign_list = ["capricorn", "taurus", "gemini", "cancer", "leo", "virgo", "libra",
 def getsign():
     get_sign = str(input("please enter your sign: ")).lower()
     if get_sign in sign_list:
-        return get_sign
+        return get_sign    
 #this function contains a varible that allows the user to imput their sign, the if statement allows for the program to get the sign in the list
     else:
         print("imput not applicable please try again")
@@ -48,7 +48,7 @@ def mainmenu():
               description()
         elif selection == 'find compatibility':
               compatibility()
-        #if and elif statements are necessary for the user to have multiple options on the menu     
+        #if and elif statements are necessary for the user to have multiple options on the menu
         elif selection == 'change sign':
             getsign()
         #Allows for the user to change the sign they previously imputed
