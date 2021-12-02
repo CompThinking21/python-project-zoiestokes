@@ -6,6 +6,7 @@ sign_list = ["capricorn", "taurus", "gemini", "cancer", "leo", "virgo", "libra",
 #create list that stores all horoscope signs, this is important because the user will be able to now imput any of these 12 signs
 user_sign = ""
 aztrodictionary = {}
+description = ""
 def getsign():
     get_sign = str(input("please enter your sign: ")).lower()
     if get_sign in sign_list:
@@ -24,7 +25,7 @@ getsign()
 #I put in place the parameters necessary for aztrodata to be used throughout my program
 # def findhoroscope():
 
-#Created a dictionary to store the aztrodata
+#Created a dictionary to store the aztrodat
 def description():
     print(aztrodictionary['description'])
 #This function allows for the user to get a description of their sign, the user can access the capabilities of this function through the main menu that starts on line 31
