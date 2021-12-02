@@ -61,4 +61,6 @@ def mainmenu():
             break
         else:
               print("Unknown Option Selected!")
+    #accounts for if the user imputs something that isn't an option.
 mainmenu()
+#call main menu function
