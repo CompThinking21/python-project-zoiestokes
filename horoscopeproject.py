@@ -8,6 +8,7 @@ user_sign = ""
 #user_sign is empty so it can be used in the program
 aztrodictionary = {}
 def getsign():
+    global aztrodictionary
     get_sign = str(input("please enter your sign: ")).lower()
     if get_sign in sign_list:
         user_sign = get_sign
