@@ -19,7 +19,7 @@ def getsign():
         aztrodata = requests.post('https://aztro.sameerkumar.website/', params=params)
         aztrodictionary = aztrodata.json()
 #if statement allows for the program to get the users sign on of the list
-#params for the aztrodata have to be in the statement in order for the program to return the user proper data each time 
+#params for the aztrodata have to be in the statement in order for the program to return the user proper data each time
     else:
         print("imput not applicable please try again")
         getsign()
@@ -47,17 +47,17 @@ def mainmenu():
         #options.sort()
         for entry in options:
             print(entry, menu[entry])
-        selection=input("Please Select:")
+        selection=input("please select an option:")
         #Lets the user know that they have to select an option
-        if selection =='find horoscope':
+        if selection =='1':
             description()
-        elif selection == 'find compatibility':
+        elif selection == '2':
             compatibility()
         #if and elif statements are necessary for the user to have multiple options on the menu
-        elif selection == 'change sign':
+        elif selection == '3':
             getsign()
         #Allows for the user to change the sign they previously imputed
-        elif selection == 'exit':
+        elif selection == '4':
             break
         else:
               print("Unknown Option Selected!")
