@@ -4,23 +4,26 @@ import json
 #import json allows for the aztro data to be stored in a dictionary, so we can grab certain parts of that data and use it when it is needed
 sign_list = ["capricorn", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "aries", "aquarius"]
 #create list that stores all horoscope signs, this is important because the user will be able to now imput any of these 12 signs
+user_sign = ""
+aztrodictionary = {}
 def getsign():
     get_sign = str(input("please enter your sign: ")).lower()
     if get_sign in sign_list:
-        return get_sign
+        user_sign = get_sign
+        params = (
+        ('sign', user_sign),
+        ('day', 'today'))
+        aztrodata = requests.post('https://aztro.sameerkumar.website/', params=params)
+        aztrodictionary = aztrodata.json()
 #this function contains a varible that allows the user to imput their sign, the if statement allows for the program to get the sign in the list
     else:
         print("imput not applicable please try again")
         getsign()
 #the else statment accounts for if the user imputs anything other then a sign from the list
-user_sign = getsign()
-params = (
-('sign', user_sign),
-('day', 'today'))
-aztrodata = requests.post('https://aztro.sameerkumar.website/', params=params)
+getsign()
 #I put in place the parameters necessary for aztrodata to be used throughout my program
 # def findhoroscope():
-aztrodictionary = aztrodata.json()
+
 #Created a dictionary to store the aztrodata
 def description():
     print(aztrodictionary['description'])
@@ -45,9 +48,9 @@ def mainmenu():
         selection=input("Please Select:")
         #Lets the user know that they have to select an option
         if selection =='find horoscope':
-              description()
+            description()
         elif selection == 'find compatibility':
-              compatibility()
+            compatibility()
         #if and elif statements are necessary for the user to have multiple options on the menu
         elif selection == 'change sign':
             getsign()
