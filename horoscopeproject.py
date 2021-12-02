@@ -9,6 +9,7 @@ user_sign = ""
 aztrodictionary = {}
 def getsign():
     global aztrodictionary
+    #key word global is essential because it allows for it to be used inside the if statement below
     get_sign = str(input("please enter your sign: ")).lower()
     if get_sign in sign_list:
         user_sign = get_sign
@@ -17,7 +18,8 @@ def getsign():
         ('day', 'today'))
         aztrodata = requests.post('https://aztro.sameerkumar.website/', params=params)
         aztrodictionary = aztrodata.json()
-#this function contains a varible that allows the user to imput their sign, the if statement allows for the program to get the sign in the list
+#if statement allows for the program to get the users sign on of the list
+#params for the aztrodata have to be in the statement in order for the program to return the user proper data each time 
     else:
         print("imput not applicable please try again")
         getsign()
