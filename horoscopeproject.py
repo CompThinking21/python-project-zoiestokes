@@ -7,7 +7,7 @@ sign_list = ["capricorn", "taurus", "gemini", "cancer", "leo", "virgo", "libra",
 def getsign():
     get_sign = str(input("please enter your sign: ")).lower()
     if get_sign in sign_list:
-        return get_sign    
+        return get_sign
 #this function contains a varible that allows the user to imput their sign, the if statement allows for the program to get the sign in the list
     else:
         print("imput not applicable please try again")
@@ -16,7 +16,7 @@ def getsign():
 user_sign = getsign()
 params = (
 ('sign', user_sign),
- ('day', 'today'))
+('day', 'today'))
 aztrodata = requests.post('https://aztro.sameerkumar.website/', params=params)
 #I put in place the parameters necessary for aztrodata to be used throughout my program
 # def findhoroscope():
