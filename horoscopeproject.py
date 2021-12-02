@@ -5,8 +5,8 @@ import json
 sign_list = ["capricorn", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "aries", "aquarius"]
 #create list that stores all horoscope signs, this is important because the user will be able to now imput any of these 12 signs
 user_sign = ""
+#user_sign is empty so it can be used in the program
 aztrodictionary = {}
-description = ""
 def getsign():
     get_sign = str(input("please enter your sign: ")).lower()
     if get_sign in sign_list:
@@ -23,8 +23,6 @@ def getsign():
 #the else statment accounts for if the user imputs anything other then a sign from the list
 getsign()
 #I put in place the parameters necessary for aztrodata to be used throughout my program
-# def findhoroscope():
-
 #Created a dictionary to store the aztrodat
 def description():
     print(aztrodictionary['description'])
